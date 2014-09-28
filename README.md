@@ -37,4 +37,7 @@ On the site where you want to incorporate images, add the following code snippet
 More information
 ================
 
-See [the demo](piwigo-random-demo.html) for examples of more advanced uses.
+See the demo for examples of more advanced uses:
+
+* [HTML source](piwigo-random-demo.html)
+* [Browsable demo](http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-demo.html)

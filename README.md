@@ -41,3 +41,11 @@ See the demo for examples of more advanced uses:
 
 * [HTML source](piwigo-random-demo.html)
 * [Browsable demo](http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-demo.html)
+
+Alternatives
+============
+
+* [PiwigoPress](https://wordpress.org/plugins/piwigopress/): Same
+  idea, with more features but limited to wordpress.
+
+

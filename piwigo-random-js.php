@@ -1,4 +1,5 @@
 <?php
+// Your piwigo gallery here:
 $site = "http://mmoy.piwigo.com/";
 $maximages = 1;
 $cat_id = null;

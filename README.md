@@ -34,6 +34,11 @@ On the site where you want to incorporate images, add the following code snippet
 </span>
 ```
 
+The script will look for an HTML element with `id="random_image"`, and
+add the images to this element. Note the `async` attribute to allow
+asynchronous loading of the script: if your piwigo gallery is slow or
+even down, it won't slow down your website.
+
 More information
 ================
 

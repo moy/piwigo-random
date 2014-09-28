@@ -47,6 +47,9 @@ See the demo for examples of more advanced uses:
 * [HTML source](piwigo-random-demo.html)
 * [Browsable demo](http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-demo.html)
 
+Don't hesitate to read the source code of `piwigo-random-js.php`, it's
+actually a very small piece of code!
+
 Alternatives
 ============
 

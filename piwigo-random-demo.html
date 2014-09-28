@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head><title>Random images demo</title></head>
+<body>
+<h1>Random image, no style</h1>
+<p>This <span id="random_image">
+  <script type="text/javascript"
+	  src="//www-verimag.imag.fr/~moy/piwigo-random-js.php"
+	  async>
+  </script>
+</span>
+is a random image</p>
+
+<h1>Random image in one particular target</h1>
+<p>The image is here:<span id="foo"></span>.</p>
+<p>The script is here:
+  <script type="text/javascript"
+	  src="//www-verimag.imag.fr/~moy/piwigo-random-js.php?element_name=foo"
+	  async>
+  </script>.</p>
+
+<h1>Several images at a time</h1>
+<div id="several">
+  <script type="text/javascript"
+	  src="//www-verimag.imag.fr/~moy/piwigo-random-js.php?element_name=several&amp;maximages=3"
+	  async>
+  </script>
+</div>
+
+<h1>Specifying a category</h1>
+<div id="cat">
+  <script type="text/javascript"
+	  src="//www-verimag.imag.fr/~moy/piwigo-random-js.php?element_name=cat&amp;cat_id=13"
+	  async>
+  </script>
+</div>
+
+<h1>Styling the images</h1>
+
+<style type="text/css"> 
+#styled_random_image img {border: solid 1px grey; padding:5px; margin:5px;}
+#styled_random_image img:hover {opacity: .8}
+#styled_random_image {text-align:right; display: inline; background-color: white;}
+@media all and (max-device-width: 599px),
+       all and (max-width: 599px)
+{
+#styled_random_image {display: none}
+}
+</style>
+
+<div id="styled_random_image">
+  <script type="text/javascript"
+	  src="//www-verimag.imag.fr/~moy/piwigo-random-js.php?element_name=styled_random_image&amp;cat_id=13"
+	  async>
+  </script>
+</div>
+
+  
+  <div id="validator">
+    <a href="http://validator.w3.org/check?uri=referer">
+      <img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_64.png"
+	   alt="Valid HTML" height="64" width="64"
+	   /></a>
+  </div>
+</body>
+</html>
+

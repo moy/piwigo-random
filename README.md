@@ -8,27 +8,27 @@ It uses Piwigo's [remote API](http://piwigo.org/demo/tools/ws.htm), so
 it does not need anything installed on the Piwigo server. It consists
 in 2 parts:
 
-* A small PHP script, `piwigo-random-js.php` that should be placed on
+* A small PHP script, `piwigo-random-backend.php` that should be placed on
   any webserver able to execute PHP.
 
 * An HTML snippet, to be inserted in any webpage where you wish to
   include images.
 
-Technically, the HTML snippet loads `piwigo-random-js.php` as
+Technically, the HTML snippet loads `piwigo-random-backend.php` as
 JavaScript code, which generates the images element.
 
 How to use it
 =============
 
-Download `piwigo-random-js.php` and put it on a webserver able to
+Download `piwigo-random-backend.php` and put it on a webserver able to
 execute PHP. Edit the file and change `$site` to your piwigo URL.
 
-On the site where you want to incorporate images, add the following code snippet (change the `src=` field to point to your own `piwigo-random-js.php`).
+On the site where you want to incorporate images, add the following code snippet (change the `src=` field to point to your own `piwigo-random-backend.php`).
 
 ```html
 <span id="random_image">
   <script type="text/javascript"
-	  src="//www-verimag.imag.fr/~moy/piwigo-random-js.php"
+	  src="//www-verimag.imag.fr/~moy/piwigo-random-backend.php"
 	  async>
   </script>
 </span>
@@ -53,12 +53,12 @@ The previous method has several advantages:
 still, it won't work if the client disabled JavaScript. An alternate
 method is to include the HTML elements for the random image
 server-side. This can be done by passing `mode=html` to
-`piwigo-random-js.php`. For example, in PHP (replace with your URL of
+`piwigo-random-backend.php`. For example, in PHP (replace with your URL of
 course):
 
 ```php
 <p>This is a random image:
-<?php echo file_get_contents("http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-js.php?mode=html&cat_id=13"); ?>
+<?php echo file_get_contents("http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-backend.php?mode=html&cat_id=13"); ?>
 </p>
 
 ```
@@ -71,7 +71,7 @@ See the demo for examples of more advanced uses:
 * [HTML source](piwigo-random-demo.html)
 * [Browsable demo](http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-demo.html)
 
-Don't hesitate to read the source code of `piwigo-random-js.php`, it's
+Don't hesitate to read the source code of `piwigo-random-backend.php`, it's
 actually a very small piece of code!
 
 Alternatives

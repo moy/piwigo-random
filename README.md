@@ -20,10 +20,11 @@ JavaScript code, which generates the images element.
 How to use it
 =============
 
-Download `piwigo-random-backend.php` and put it on a webserver able to
-execute PHP. Edit the file and change `$site` to your piwigo URL.
+* Download `piwigo-random-backend.php` and put it on a webserver able to
+  execute PHP. Edit the file and change `$site` to your piwigo URL.
 
-On the site where you want to incorporate images, add the following code snippet (change the `src=` field to point to your own `piwigo-random-backend.php`).
+* On the site where you want to incorporate images, add the following code
+  snippet (change the `src=` field to point to your own `piwigo-random-backend.php`):
 
 ```html
 <span id="random_image">
@@ -33,6 +34,8 @@ On the site where you want to incorporate images, add the following code snippet
   </script>
 </span>
 ```
+
+* Optionally: send me an email, I'd like to know if anyone uses my code :-).
 
 The script will look for an HTML element with `id="random_image"`, and
 add the images to this element. Note the `async` attribute to allow

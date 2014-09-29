@@ -52,7 +52,7 @@ $url = $site . "ws.php" .
 $response = file_get_contents($url);
 $thumbc = unserialize($response);
 
-if ($thumbc["stat"]=='ok')
+if ($thumbc["stat"] === 'ok')
 {
   foreach ($thumbc["result"]["images"] as $image)
   {

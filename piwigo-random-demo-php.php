@@ -10,9 +10,10 @@
     for details.</p>
 
     <h1>Using file_get_content</h1>
-    <p><span>This
-    <?php echo file_get_contents("http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-backend.php?mode=html&cat_id=13"); ?>
-    </span> is a random image</p>
+    <p>This
+      <?php $base_url = "http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-backend.php";
+	     echo file_get_contents($base_url . "?mode=html&cat_id=13"); ?>
+    is a random image</p>
     
     <div id="validator">
       <a href="http://validator.w3.org/check?uri=referer">

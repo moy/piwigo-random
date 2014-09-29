@@ -57,9 +57,10 @@ server-side. This can be done by passing `mode=html` to
 course):
 
 ```php
-<p>This is a random image:
-<?php echo file_get_contents("http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-backend.php?mode=html&cat_id=13"); ?>
-</p>
+<p>This
+  <?php $base_url = "http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-backend.php";
+	     echo file_get_contents($base_url . "?mode=html&cat_id=13"); ?>
+is a random image</p>
 
 ```
 

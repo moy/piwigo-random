@@ -39,6 +39,30 @@ add the images to this element. Note the `async` attribute to allow
 asynchronous loading of the script: if your piwigo gallery is slow or
 even down, it won't slow down your website.
 
+Alternate method, without JavaScript
+====================================
+
+The previous method has several advantages:
+
+* It allows asynchronous load, i.e. it won't slow down your site even
+  if the piwigo gallery experiences troubles.
+
+* It works regardless of the technology your website uses, even in
+  plain static HTML.
+
+still, it won't work if the client disabled JavaScript. An alternate
+method is to include the HTML elements for the random image
+server-side. This can be done by passing `mode=html` to
+`piwigo-random-js.php`. For example, in PHP (replace with your URL of
+course):
+
+```php
+<p>This is a random image:
+<?php echo file_get_contents("http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-js.php?mode=html&cat_id=13"); ?>
+</p>
+
+```
+
 More information
 ================
 

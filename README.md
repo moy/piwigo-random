@@ -44,6 +44,30 @@ add the images to this element. Note the `async` attribute to allow
 asynchronous loading of the script: if your piwigo gallery is slow or
 even down, it won't slow down your website.
 
+Customization
+-------------
+
+One can change slightly the behavior of piwigo-random by adding GET
+parameters to the piwigo-random-backend.php URL (e.g.
+`src="//example.com/piwigo-random-backend.php?variable1=value&amp;variable2=value`):
+
+* `maximages` (integer, default=1) is the number of images to display.
+
+* `cat_id` (integer, default=null) is the number of the category
+  (=album) in Piwigo. It is the number that appears in the URL when
+  you visit an album in your Piwigo gallery. By default, take any image.
+
+* `element_name` (string, default="random_image") is the name of the
+  HTML element generated. Use it to add CSS customization for example.
+
+* `mode` (string, default="javascript") is the way piwigo-random
+  should work. See below.
+
+* `target` (string, default="_blank") defines how the link should
+  behave (see how the target HTML attribute works for details). By
+  default, open in a new tab. Set to "_self" to open in the same tab
+  as the source page.
+
 Alternate method, without JavaScript
 ====================================
 

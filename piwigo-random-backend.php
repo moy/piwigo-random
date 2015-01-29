@@ -25,6 +25,7 @@ $maximages = 1;
 $cat_id = null;
 $element_name = 'random_image';
 $mode = 'javascript';
+$target = '_blank';
 
 if (is_numeric($_GET['maximages']))
 {
@@ -39,6 +40,11 @@ if (is_numeric($_GET['cat_id']))
 if (isset($_GET['element_name']))
 {
   $element_name = $_GET['element_name'];
+}
+
+if (isset($_GET['target']))
+{
+  $element_name = $_GET['target'];
 }
 
 if ($_GET['mode'] == 'html') {
@@ -75,6 +81,7 @@ if ($thumbc["stat"] === 'ok')
       newLink.href = <?php echo json_encode($page_url); ?>;
       newLink.id = "rndpic-a";
       newLink.appendChild(newImg);
+      newLink.target = <?php echo json_encode($target); ?>;
       var target = document.getElementById(<?php echo json_encode($element_name); ?>);
       if (!target)
       {

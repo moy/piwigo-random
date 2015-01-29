@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head><title>Random images demo</title></head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Random images demo</title>
+  </head>
   <body>
     <p>Piwigo RANDOM demo. See <a
     href="https://github.com/moy/piwigo-random">https://github.com/moy/piwigo-random</a>
@@ -9,7 +12,7 @@
     <h1>Random image, no style</h1>
     <p>This <span id="random_image">
       <script type="text/javascript"
-	    src="//www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-js.php"
+	    src="//www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-backend.php"
 	    async>
       </script>
     </span> is a random image</p>
@@ -18,14 +21,14 @@
     <p>The image is here:<span id="foo"></span>.</p>
     <p>The script is here:
     <script type="text/javascript"
-	    src="//www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-js.php?element_name=foo"
+	    src="//www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-backend.php?element_name=foo"
 	    async>
     </script>.</p>
 
     <h1>Several images at a time</h1>
     <div id="several">
       <script type="text/javascript"
-	      src="//www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-js.php?element_name=several&amp;maximages=3"
+	      src="//www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-backend.php?element_name=several&amp;maximages=3"
 	      async>
       </script>
     </div>
@@ -33,7 +36,7 @@
     <h1>Specifying a category</h1>
     <div id="cat">
       <script type="text/javascript"
-	      src="//www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-js.php?element_name=cat&amp;cat_id=13"
+	      src="//www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-backend.php?element_name=cat&amp;cat_id=13"
 	      async>
       </script>
     </div>
@@ -53,7 +56,7 @@
 	}
       </style>
       <script type="text/javascript"
-	      src="//www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-js.php?element_name=styled_random_image&amp;cat_id=13"
+	      src="//www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-backend.php?element_name=styled_random_image&amp;cat_id=13"
 	      async>
       </script>
     </div>

@@ -9,7 +9,9 @@ it does not need anything installed on the Piwigo server. It consists
 in 2 parts:
 
 * A small PHP script, `piwigo-random-js.php` that should be placed on
-  any webserver able to execute PHP.
+  any webserver able to execute PHP. It can be any server: either your
+  Piwigo server, the same server as the one on which you want to
+  integrate the image, or any other.
 
 * An HTML snippet, to be inserted in any webpage where you wish to
   include images.

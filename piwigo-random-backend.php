@@ -69,6 +69,11 @@ if ($thumbc["stat"] === 'ok')
   {
     $image_url = (string)$image['derivatives']['thumb']['url'];
     $page_url = (string)$image['page_url'];
+    $comment = (string)$image['comment'];
+    if ($comment === '') {
+      $comment = "Random image";
+    }
+    $comment .= "\n(click for full-size)";
     if ($mode === 'javascript') {
       // Would be a bit simpler with jquery, but let's not
       // force it for such a simple piece of code.
@@ -76,7 +81,7 @@ if ($thumbc["stat"] === 'ok')
       var newImg = document.createElement("img");
       newImg.src = <?php echo json_encode($image_url); ?>;
       newImg.alt = "";
-      newImg.title = "Random image\n(Click for full-size)";
+      newImg.title = <?php echo json_encode($comment) ?>;
       var newLink = document.createElement("a");
       newLink.href = <?php echo json_encode($page_url); ?>;
       newLink.id = "rndpic-a";
@@ -100,7 +105,7 @@ if ($thumbc["stat"] === 'ok')
       <?php
     } else if ($mode === 'html') {
       echo '<a id="rndpic-a" href="' . htmlspecialchars($page_url) . '"><img src="'
-        . htmlspecialchars($image_url) . '" alt="" title="Random image\n(Click for full-size)" />'
+        . htmlspecialchars($image_url) . '" alt="" title="' . htmlspecialchars($comment) . '" />'
         . '</a>';
     }
   }

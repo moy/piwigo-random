@@ -47,7 +47,7 @@ if (isset($_GET['target']))
   $element_name = $_GET['target'];
 }
 
-if ($_GET['mode'] == 'html') {
+if (isset($_GET['mode']) && $_GET['mode'] == 'html') {
   $mode = 'html';
 }
 

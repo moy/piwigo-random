@@ -116,5 +116,3 @@ else
   // Silent error.
   // echo "Error";
 }
-
-?>

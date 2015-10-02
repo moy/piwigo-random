@@ -29,6 +29,8 @@ $mode = 'javascript';
 $target = '_blank';
 $size = 'thumb';
 
+$error = '';
+
 if (is_numeric($_GET['maximages']))
 {
   $maximages = intval($_GET['maximages']);
@@ -54,11 +56,32 @@ if (isset($_GET['size']))
   $size = $_GET['size'];
 }
 
-if (isset($_GET['mode']) && $_GET['mode'] == 'html') {
-  $mode = 'html';
+if (isset($_GET['mode'])) {
+  $mode = $_GET['mode'];
 }
 
+function check_param($param, $values) {
+  global $error;
+  global $$param;
+  if (!in_array($$param, $values, true)) {
+    if ($error != '') {
+      $error .= ', ';
+    }
+    $error .= 'Invalid value \'' . $$param . '\' for parameter \'' . $param
+      . '\' (possible values are: ' . implode(', ', $values) . ')';
+  }
+}
+
+check_param('size', array('square', 'thumb', '2small', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'));
+check_param('mode', array('html', 'javascript'));
+
 header('Content-Type: text/javascript');
+if ($error != '') {
+  echo 'document.getElementById('. json_encode($element_name) . ').innerHTML = ' . json_encode(
+    '<strong>piwigo-random error:</strong> ' . htmlspecialchars($error) . '.') . ';';
+  exit(1);
+}
+
 $url = $site . "ws.php" .
   "?format=php" .
   "&method=pwg.categories.getImages" .

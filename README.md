@@ -57,6 +57,10 @@ parameters to the piwigo-random-backend.php URL (e.g.
   (=album) in Piwigo. It is the number that appears in the URL when
   you visit an album in your Piwigo gallery. By default, take any image.
 
+* `size` (string, must be one of `square`, `thumb`, `2small`,
+  `xsmall`, `small`, `medium`, `large`, `xlarge`, `xxlarge`) is the
+  size of the image.
+
 * `element_name` (string, default="random_image") is the name of the
   HTML element generated. Use it to add CSS customization for example.
 

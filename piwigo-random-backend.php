@@ -27,6 +27,7 @@ $cat_id = null;
 $element_name = 'random_image';
 $mode = 'javascript';
 $target = '_blank';
+$size = 'thumb';
 
 if (is_numeric($_GET['maximages']))
 {
@@ -46,6 +47,11 @@ if (isset($_GET['element_name']))
 if (isset($_GET['target']))
 {
   $element_name = $_GET['target'];
+}
+
+if (isset($_GET['size']))
+{
+  $size = $_GET['size'];
 }
 
 if (isset($_GET['mode']) && $_GET['mode'] == 'html') {
@@ -68,7 +74,7 @@ if ($thumbc["stat"] === 'ok')
 {
   foreach ($thumbc["result"]["images"] as $image)
   {
-    $image_url = (string)$image['derivatives']['thumb']['url'];
+    $image_url = (string)$image['derivatives'][$size]['url'];
     $page_url = (string)$image['page_url'];
     $comment = (string)$image['comment'];
     if ($comment === '') {

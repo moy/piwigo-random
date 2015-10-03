@@ -79,6 +79,7 @@ header('Content-Type: text/javascript');
 if ($error != '') {
   echo 'document.getElementById('. json_encode($element_name) . ').innerHTML = ' . json_encode(
     '<strong>piwigo-random error:</strong> ' . htmlspecialchars($error) . '.') . ';';
+  echo 'console.log('. json_encode('piwigo-random error:' . $error) . ');';
   exit(1);
 }
 

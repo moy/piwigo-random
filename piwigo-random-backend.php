@@ -22,6 +22,8 @@
 
 // Your piwigo gallery here:
 $site = "http://mmoy.piwigo.com/";
+
+// You should not have to modify anything below:
 $maximages = 1;
 $cat_id = null;
 $element_name = 'random_image';

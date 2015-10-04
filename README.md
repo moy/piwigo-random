@@ -72,6 +72,8 @@ parameters to the piwigo-random-backend.php URL (e.g.
   default, open in a new tab. Set to "_self" to open in the same tab
   as the source page.
 
+To see all these settings in action, see the [demo](#demo) below.
+
 Alternate method, without JavaScript
 ====================================
 
@@ -100,9 +102,9 @@ is a random image</p>
 More information
 ================
 
-See the demo for examples of more advanced uses:
+<a id="demo"></a>See the demo for examples of more advanced uses:
 
-* [HTML source](piwigo-random-demo.html)
+* [HTML source of the demo](piwigo-random-demo.html)
 * [Browsable demo](http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-demo.html)
 
 Don't hesitate to read the source code of `piwigo-random-backend.php`, it's

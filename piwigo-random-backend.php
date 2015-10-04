@@ -2,7 +2,7 @@
 // +-----------------------------------------------------------------------+
 // | Piwigo RANDOM - Insert images from a Piwigo Galery in a website       |
 // +-----------------------------------------------------------------------+
-// | Copyright(C) 2014 Matthieu Moy                                        |
+// | Copyright(C) 2014, 2015 Matthieu Moy                                  |
 // +-----------------------------------------------------------------------+
 // | This program is free software; you can redistribute it and/or modify  |
 // | it under the terms of the GNU General Public License as published by  |

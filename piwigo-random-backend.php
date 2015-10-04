@@ -50,7 +50,7 @@ if (isset($_GET['element_name']))
 
 if (isset($_GET['target']))
 {
-  $element_name = $_GET['target'];
+  $target = $_GET['target'];
 }
 
 if (isset($_GET['size']))

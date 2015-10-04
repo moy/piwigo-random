@@ -68,9 +68,10 @@ parameters to the piwigo-random-backend.php URL (e.g.
   should work. See below.
 
 * `target` (string, default="_blank") defines how the link should
-  behave (see how the target HTML attribute works for details). By
-  default, open in a new tab. Set to "_self" to open in the same tab
-  as the source page.
+  behave (see how the
+  [target HTML](http://www.w3schools.com/tags/att_a_target.asp)
+  attribute works for details). By default, open in a new tab. Set to
+  "_self" to open in the same tab as the source page.
 
 To see all these settings in action, see the [demo](#demo) below.
 

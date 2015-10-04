@@ -107,6 +107,7 @@ More information
 
 * [HTML source of the demo](piwigo-random-demo.html)
 * [Browsable demo](http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-demo.html)
+* [Demo using the HTML mode (server-side in PHP)](http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-demo-php.php)
 
 Don't hesitate to read the source code of `piwigo-random-backend.php`, it's
 actually a very small piece of code!

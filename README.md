@@ -31,7 +31,7 @@ How to use it
 ```html
 <span id="random_image">
   <script type="text/javascript"
-	  src="//www-verimag.imag.fr/~moy/piwigo-random-backend.php"
+	  src="//matthieu-moy.fr/piwigo-random-backend.php"
 	  async>
   </script>
 </span>
@@ -94,7 +94,7 @@ course):
 
 ```php
 <p>This
-  <?php $base_url = "http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-backend.php";
+  <?php $base_url = "http://matthieu-moy.fr/piwigo-random/piwigo-random-backend.php";
 	     echo file_get_contents($base_url . "?mode=html&cat_id=13"); ?>
 is a random image</p>
 
@@ -106,8 +106,8 @@ More information
 <a id="demo"></a>See the demo for examples of more advanced uses:
 
 * [HTML source of the demo](piwigo-random-demo.html)
-* [Browsable demo](http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-demo.html)
-* [Demo using the HTML mode (server-side in PHP)](http://www-verimag.imag.fr/~moy/piwigo-random/piwigo-random-demo-php.php)
+* [Browsable demo](http://matthieu-moy.fr/piwigo-random/piwigo-random-demo.html)
+* [Demo using the HTML mode (server-side in PHP)](http://matthieu-moy.fr/piwigo-random/piwigo-random-demo-php.php)
 
 Don't hesitate to read the source code of `piwigo-random-backend.php`, it's
 actually a very small piece of code!

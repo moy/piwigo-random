@@ -21,7 +21,8 @@
 // +-----------------------------------------------------------------------+
 
 // Your piwigo gallery here:
-$site = "http://mmoy.piwigo.com/";
+$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443 || $_SERVER['HTTP_X_FORWARDED_PORT'] == 443) ? "https://" : "http://";
+$site = $protocol . "mmoy.piwigo.com/";
 
 // You should not have to modify anything below:
 $maximages = 1;

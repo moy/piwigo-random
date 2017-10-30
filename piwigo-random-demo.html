@@ -43,12 +43,14 @@
 
     <h1>Styling the images</h1>
 
-
     <div id="styled_random_image">
       <style type="text/css" scoped>
+	/* Frame and margin around the image */
 	#styled_random_image img {border: solid 1px grey; padding:5px; margin:5px;}
+	/* Change opacity on mouse over */
 	#styled_random_image img:hover {opacity: .8}
 	#styled_random_image {text-align:right; display: inline; background-color: white;}
+	/* Don't display the image on small screens */
 	@media all and (max-device-width: 599px),
 	all and (max-width: 599px)
 	{
@@ -57,6 +59,19 @@
       </style>
       <script type="text/javascript"
 	      src="//matthieu-moy.fr/piwigo-random/piwigo-random-backend.php?element_name=styled_random_image&amp;cat_id=13"
+	      async>
+      </script>
+    </div>
+
+    <h1>Styling several images at a time</h1>
+
+    <div id="styled_random_image_multi">
+      <style type="text/css" scoped>
+	/* Margin around each image */
+	#styled_random_image_multi img {border: solid 1px grey; padding:5px; margin:5px; margin-left: 10px; margin-right: 10px;}
+      </style>
+      <script type="text/javascript"
+	      src="//matthieu-moy.fr/piwigo-random/piwigo-random-backend.php?element_name=styled_random_image_multi&amp;cat_id=13&amp;maximages=4"
 	      async>
       </script>
     </div>

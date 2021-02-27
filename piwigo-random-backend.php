@@ -21,25 +21,16 @@
 // +-----------------------------------------------------------------------+
 
 // Your piwigo gallery here:
-$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443 || $_SERVER['HTTP_X_FORWARDED_PORT'] == 443) ? "https://" : "http://";
-$site = $protocol . "mmoy.piwigo.com/";
-
-// You should not have to modify anything below:
-$maximages = 1;
-$cat_id = null;
-$element_name = 'random_image';
-$mode = 'javascript';
-$target = '_blank';
-$size = 'thumb';
+include 'prb-settings.php';
 
 $error = '';
 
-if (is_numeric($_GET['maximages']))
+if (isset($_GET['maximages']) && is_numeric($_GET['maximages']))
 {
   $maximages = intval($_GET['maximages']);
 }
 
-if (is_numeric($_GET['cat_id']))
+if (isset($_GET['cat_id']) && is_numeric($_GET['cat_id']))
 {
   $cat_id = intval($_GET['cat_id']);
 }
@@ -76,7 +67,7 @@ function check_param($param, $values) {
 }
 
 check_param('size', array('square', 'thumb', '2small', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'));
-check_param('mode', array('html', 'javascript'));
+check_param('mode', array('html', 'javascript', 'redirect'));
 
 header('Content-Type: text/javascript');
 if ($error != '') {
@@ -150,6 +141,8 @@ if ($thumbc["stat"] === 'ok')
 	'" target="' . htmlspecialchars($target) . '"><img src="'
         . htmlspecialchars($image_url) . '" alt="" title="' . htmlspecialchars($comment) . '" />'
         . '</a>';
+    } else if ($mode === 'redirect') {
+      header("Location: ".$image_url);
     }
   }
 }

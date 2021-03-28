@@ -93,27 +93,24 @@ if ($error != '') {
   exit(1);
 }
 
+$url = $site . "ws.php" .
+  "?format=php";
 if ($tag_name)
 {
-  $url = $site . "ws.php" .
-    "?format=php" .
-    "&method=pwg.tags.getImages" .
-    "&tag_name=" . $tag_name .
-    "&per_page=" . $maximages .
-    "&page=1" .
-    "&order=random";
+  $url .= "&method=pwg.tags.getImages" .
+    "&tag_name=" . $tag_name;
 }
 else
 {
-  $url = $site . "ws.php" .
-    "?format=php" .
-    "&method=pwg.categories.getImages" .
+  $url .= "&method=pwg.categories.getImages" .
     ($cat_id ? "&cat_id=" . $cat_id : "") .
-    "&recursive=true" .
-    "&per_page=" . $maximages .
-    "&page=1" .
-    "&order=random";
+    "&recursive=true";
 }
+$url .=
+  "&per_page=" . $maximages .
+  "&page=1" .
+  "&order=random";
+
 $response = file_get_contents($url);
 $thumbc = unserialize($response);
 
@@ -122,10 +119,10 @@ if ($thumbc["stat"] === 'ok')
   foreach ($thumbc["result"]["images"] as $image)
   {
     $image_url = (string)$image['derivatives'][$size]['url'];
-    if ($tag_name) {
-      $page_url = (string)$image['page_url'];
-    }
-    else {
+    # pwg.tags.getImages for example does not deliver categories.
+    $cats = (isset($image['categories']) ? $image['categories'] : null);
+    $cats_count = (isset($cats) ? count($cats) : 0);
+    if ($cats_count > 0) {
       # Piwigo's WS returns two URLs for the image. $image['page_url'] is the URL
       # of the image, without any category consideration, and $image['categories']
       # is the list of categories, each of which contains the URL of the image
@@ -133,8 +130,9 @@ if ($thumbc["stat"] === 'ok')
       # within this category). In practice, the list of categories seems to be a
       # singleton whenever we set $cat_id, but let's have fun and pick it randomly
       # anyway.
-      $cats = $image['categories'];
-      $page_url = (string)$cats[random_int(0, count($cats) - 1)]['page_url'];
+      $page_url = (string)$cats[random_int(0, $cats_count - 1)]['page_url'];
+    } else {
+      $page_url = (string)$image['page_url'];
     }
     $comment = (string)$image['comment'];
     if ($comment === '') {

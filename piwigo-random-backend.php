@@ -31,6 +31,8 @@ $element_name = 'random_image';
 $mode = 'javascript';
 $target = '_blank';
 $size = 'thumb';
+// tag_name mode, instead of album cat_id
+$tag_name = null;
 
 $error = '';
 
@@ -63,6 +65,11 @@ if (isset($_GET['mode'])) {
   $mode = $_GET['mode'];
 }
 
+if (isset($_GET['tag_name']))
+{
+  $tag_name = $_GET['tag_name'];
+}
+
 function check_param($param, $values) {
   global $error;
   global $$param;
@@ -87,13 +94,23 @@ if ($error != '') {
 }
 
 $url = $site . "ws.php" .
-  "?format=php" .
-  "&method=pwg.categories.getImages" .
-  ($cat_id ? "&cat_id=" . $cat_id : "") .
-  "&recursive=true" .
+  "?format=php";
+if ($tag_name)
+{
+  $url .= "&method=pwg.tags.getImages" .
+    "&tag_name=" . $tag_name;
+}
+else
+{
+  $url .= "&method=pwg.categories.getImages" .
+    ($cat_id ? "&cat_id=" . $cat_id : "") .
+    "&recursive=true";
+}
+$url .=
   "&per_page=" . $maximages .
   "&page=1" .
   "&order=random";
+
 $response = file_get_contents($url);
 $thumbc = unserialize($response);
 
@@ -102,15 +119,21 @@ if ($thumbc["stat"] === 'ok')
   foreach ($thumbc["result"]["images"] as $image)
   {
     $image_url = (string)$image['derivatives'][$size]['url'];
-    # Piwigo's WS returns two URLs for the image. $image['page_url'] is the URL
-    # of the image, without any category consideration, and $image['categories']
-    # is the list of categories, each of which contains the URL of the image
-    # viewed as part of this category (e.g. next/previous buttons navigate
-    # within this category). In practice, the list of categories seems to be a
-    # singleton whenever we set $cat_id, but let's have fun and pick it randomly
-    # anyway.
-    $cats = $image['categories'];
-    $page_url = (string)$cats[random_int(0, count($cats) - 1)]['page_url'];
+    # pwg.tags.getImages for example does not deliver categories.
+    $cats = (isset($image['categories']) ? $image['categories'] : null);
+    $cats_count = (isset($cats) ? count($cats) : 0);
+    if ($cats_count > 0) {
+      # Piwigo's WS returns two URLs for the image. $image['page_url'] is the URL
+      # of the image, without any category consideration, and $image['categories']
+      # is the list of categories, each of which contains the URL of the image
+      # viewed as part of this category (e.g. next/previous buttons navigate
+      # within this category). In practice, the list of categories seems to be a
+      # singleton whenever we set $cat_id, but let's have fun and pick it randomly
+      # anyway.
+      $page_url = (string)$cats[random_int(0, $cats_count - 1)]['page_url'];
+    } else {
+      $page_url = (string)$image['page_url'];
+    }
     $comment = (string)$image['comment'];
     if ($comment === '') {
       $comment = "Random image";

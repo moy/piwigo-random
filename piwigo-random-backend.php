@@ -72,7 +72,7 @@ function check_param($param, $values) {
 }
 
 check_param('size', array('square', 'thumb', '2small', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'));
-check_param('mode', array('html', 'javascript'));
+check_param('mode', array('html', 'javascript', 'redirect'));
 
 header('Content-Type: text/javascript');
 if ($error != '') {
@@ -162,6 +162,9 @@ if ($thumbc["stat"] === 'ok')
 	'" target="' . htmlspecialchars($target) . '"><img src="'
         . htmlspecialchars($image_url) . '" alt="" title="' . htmlspecialchars($comment) . '" />'
         . '</a>';
+    } else if ($mode === 'redirect') {
+      header("Location: " . $image_url);
+      break; // There may be several images in the response, but we can only redirect to one, let's take the first.
     }
   }
 }

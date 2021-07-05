@@ -75,8 +75,8 @@ parameters to the piwigo-random-backend.php URL (e.g.
 
 To see all these settings in action, see the [demo](#demo) below.
 
-Alternate method, without JavaScript
-====================================
+Alternate methods
+=================
 
 The previous method has several advantages:
 
@@ -86,9 +86,13 @@ The previous method has several advantages:
 * It works regardless of the technology your website uses, even in
   plain static HTML.
 
-still, it won't work if the client disabled JavaScript. An alternate
-method is to include the HTML elements for the random image
-server-side. This can be done by passing `mode=html` to
+still, it won't work if the client disabled JavaScript.
+
+Server-side generation (mode=html)
+----------------------------------
+
+An alternate method is to include the HTML elements for the random image
+server-side, typically in PHP code. This can be done by passing `mode=html` to
 `piwigo-random-backend.php`. For example, in PHP (replace with your URL of
 course):
 
@@ -99,6 +103,11 @@ course):
 is a random image</p>
 
 ```
+
+Using a redirection (mode=redirect)
+-----------------------------------
+
+Piwigo-random can also be asked to issue a redirection to the image itself. This way, you can use a piwigo-random URL wherever you can use a static image URL (in the `src="..."` field of an `<img>` tag, in CSS code, ...). The user has complete freedom on the HTML or CSS code that uses this URL. The main drawback of this mode is that one only gets the URL of the image, and there's no simple way to have the image clickable to the gallery's page for example.
 
 More information
 ================

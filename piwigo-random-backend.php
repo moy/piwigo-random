@@ -21,18 +21,7 @@
 // +-----------------------------------------------------------------------+
 
 // Your piwigo gallery here:
-$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443 || $_SERVER['HTTP_X_FORWARDED_PORT'] == 443) ? "https://" : "http://";
-$site = $protocol . "mmoy.piwigo.com/";
-
-// You should not have to modify anything below:
-$maximages = 1;
-$cat_id = null;
-$element_name = 'random_image';
-$mode = 'javascript';
-$target = '_blank';
-$size = 'thumb';
-// tag_name mode, instead of album cat_id
-$tag_name = null;
+include 'prb-settings.php';
 
 $error = '';
 

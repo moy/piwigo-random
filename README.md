@@ -23,7 +23,7 @@ How to use it
 =============
 
 * Download `piwigo-random-backend.php` and put it on a webserver able to
-  execute PHP. Edit the file and change `$site` to your piwigo URL.
+  execute PHP. Create a file named prb-settings.php (you may use [prb-settings.php.example](prb-settings.php.example) as a template). Edit the file and change `$site` to your piwigo URL.
 
 * On the site where you want to incorporate images, add the following code
   snippet (change the `src=` field to point to your own `piwigo-random-backend.php`):

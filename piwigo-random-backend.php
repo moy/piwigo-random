@@ -25,12 +25,12 @@ include 'prb-settings.php';
 
 $error = '';
 
-if (is_numeric($_GET['maximages']))
+if (isset($_GET['maximages']) && is_numeric($_GET['maximages']))
 {
   $maximages = intval($_GET['maximages']);
 }
 
-if (is_numeric($_GET['cat_id']))
+if (isset($_GET['cat_id']) && is_numeric($_GET['cat_id']))
 {
   $cat_id = intval($_GET['cat_id']);
 }

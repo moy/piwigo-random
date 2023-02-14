@@ -127,4 +127,11 @@ Alternatives
 * [PiwigoPress](https://wordpress.org/plugins/piwigopress/): Same
   idea, with more features but limited to wordpress.
 
+Real-life examples
+==================
 
+* My website : https://matthieu-moy.fr/spip/
+
+* https://alexmrb.com/ uses it for a slideshow (embedded in an iframe, with a bit of JavaScript and CSS magic to move from an image to another)
+
+(Let me know if you have anything fun to add here :-) )

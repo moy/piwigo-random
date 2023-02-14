@@ -87,16 +87,16 @@ $url = $site . "ws.php" .
 if ($tag_name)
 {
   $url .= "&method=pwg.tags.getImages" .
-    "&tag_name=" . $tag_name;
+    "&tag_name=" . urlencode($tag_name);
 }
 else
 {
   $url .= "&method=pwg.categories.getImages" .
-    ($cat_id ? "&cat_id=" . $cat_id : "") .
+    ($cat_id ? "&cat_id=" . urlencode($cat_id) : "") .
     "&recursive=true";
 }
 $url .=
-  "&per_page=" . $maximages .
+  "&per_page=" . urlencode($maximages) .
   "&page=1" .
   "&order=random";
 

@@ -158,9 +158,9 @@ if ($thumbc["stat"] === 'ok')
       target.appendChild(newLink);
       <?php
     } else if ($mode === 'html') {
-      echo '<a id="rndpic-a" href="' . htmlspecialchars($page_url) .
-	'" target="' . htmlspecialchars($target) . '"><img src="'
-        . htmlspecialchars($image_url) . '" alt="" title="' . htmlspecialchars($comment) . '" />'
+      echo '<a aria-label="' . htmlspecialchars($comment) . '" id="rndpic-a" href="' . htmlspecialchars($page_url) .
+	'" target="' . htmlspecialchars($target) . '"><img loading="lazy" src="'
+        . htmlspecialchars($image_url) . '" alt="' . htmlspecialchars($comment) . '" title="' . htmlspecialchars($comment) . '" />'
         . '</a>';
     } else if ($mode === 'redirect') {
       header("Location: " . $image_url);

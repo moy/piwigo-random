@@ -10,12 +10,14 @@
     for details.</p>
 
     <h1>Using file_get_content</h1>
+    <p>You need to trust the server hosting the backend, as it can inject any HTML, including JavaScript code, in your page. Typically, the backend and your website can run on the same server.</p>
     <p>This
       <?php $base_url = "http://matthieu-moy.fr/piwigo-random/piwigo-random-backend.php";
 	     echo file_get_contents($base_url . "?mode=html&cat_id=13"); ?>
     is a random image</p>
 
     <h1>Using file_get_content and setting the target</h1>
+    <p>You need to trust the server hosting the backend, as it can inject any HTML, including JavaScript code, in your page. Typically, the backend and your website can run on the same server.</p>
     <p>This
       <?php $base_url = "http://matthieu-moy.fr/piwigo-random/piwigo-random-backend.php";
 	     echo file_get_contents($base_url . "?mode=html&target=_self"); ?>

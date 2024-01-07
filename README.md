@@ -93,13 +93,14 @@ Server-side generation (mode=html)
 
 An alternate method is to include the HTML elements for the random image
 server-side, typically in PHP code. This can be done by passing `mode=html` to
-`piwigo-random-backend.php`. For example, in PHP (replace with your URL of
-course):
+`piwigo-random-backend.php`. You need to trust the server hosting the backend,
+as it can inject any HTML, including JavaScript code, in your page. For example,
+in PHP (replace with your URL of course):
 
 ```php
 <p>This
   <?php $base_url = "http://matthieu-moy.fr/piwigo-random/piwigo-random-backend.php";
-	     echo file_get_contents($base_url . "?mode=html&cat_id=13"); ?>
+        echo file_get_contents($base_url . "?mode=html&cat_id=13"); ?>
 is a random image</p>
 
 ```

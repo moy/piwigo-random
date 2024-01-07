@@ -169,7 +169,7 @@ if ($thumbc["stat"] === 'ok')
         die("Invalid image URL, it can't contain newline characters");
       }
       header("Location: " . $image_url);
-      break; // There may be several images in the response, but we can only redirect to one, let's take the first.
+      die(); // There may be several images in the response, but we can only redirect to one, let's take the first.
     }
   }
 }

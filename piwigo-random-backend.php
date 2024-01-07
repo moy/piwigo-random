@@ -163,6 +163,11 @@ if ($thumbc["stat"] === 'ok')
         . htmlspecialchars($image_url) . '" alt="" title="' . htmlspecialchars($comment) . '" />'
         . '</a>';
     } else if ($mode === 'redirect') {
+      if (strpos($image_url, "\n") !== false || strpos($image_url, "\r")) {
+        // Make sure the Location: header is a single-line, to avoid arbitrary
+        // header injection.
+        die("Invalid image URL, it can't contain newline characters");
+      }
       header("Location: " . $image_url);
       break; // There may be several images in the response, but we can only redirect to one, let's take the first.
     }

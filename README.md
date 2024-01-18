@@ -110,7 +110,7 @@ is a random image</p>
 Using a redirection (mode=redirect)
 -----------------------------------
 
-Piwigo-random can also be asked to issue a redirection to the image itself. This way, you can use a piwigo-random URL wherever you can use a static image URL (in the `src="..."` field of an `<img>` tag, in CSS code, ...). The user has complete freedom on the HTML or CSS code that uses this URL. The main drawback of this mode is that one only gets the URL of the image, and there's no simple way to have the image clickable to the gallery's page for example.
+Piwigo-random can also be asked to issue a redirection to the image itself. This way, you can use a piwigo-random URL wherever you can use a static image URL (in the `src="..."` field of an `<img>` tag, in CSS code, ...). The user has complete freedom on the HTML or [CSS](https://www.scaler.com/topics/css/) code that uses this URL. The main drawback of this mode is that one only gets the URL of the image, and there's no simple way to have the image clickable to the gallery's page for example.
 
 A malicious backend or gallery can issue a redirect to an arbitrary URL, hence it is advised to make sure you trust both for security.
 
